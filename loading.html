@@ -1,0 +1,61 @@
+<!-- CSS -->
+.middlecenter{
+    padding-left: 12px;
+    padding-right: 12px;
+    width:fit-content;
+    height:fit-content;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+      position:fixed;
+    }
+
+    .blur{
+        position:absolute;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        z-index: 9999;
+        left:0px;
+        /* background: rgba(175, 178, 180, 0.2); */
+      }
+
+      .load{
+        position:relative;
+        width:200px;
+        height:40px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      /* loading */
+      .load span {
+          display: block;
+          height: 20px;
+          width: 20px;
+          background: <?= color('primary dark'); ?>;
+          border-radius: 50%;
+          animation: all-effect 0.6s linear infinite alternate;
+          transform: scale(0);
+      }
+
+      .load span:nth-child(4) {
+          animation-delay: 0.4s;
+          background: <?= color('info main'); ?>;
+      }
+
+
+<!-- HTML -->
+<div class="blur waiting" style="display:none;">
+    <div class="middlecenter">
+        <div class="load">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</div>
