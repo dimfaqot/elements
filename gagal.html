@@ -1,0 +1,62 @@
+
+<!-- CSS -->
+
+.middlecenter{
+    padding-left: 12px;
+    padding-right: 12px;
+    width:fit-content;
+    height:fit-content;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+      position:fixed;
+    }
+
+    .blur{
+        position:absolute;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        z-index: 9999;
+        left:0px;
+        /* background: rgba(175, 178, 180, 0.2); */
+      }
+
+
+
+
+
+<div class="gagal blur" style="border-radius: 10px; display:none">
+    <div class="middlecenter">
+        <div class="d-flex justify-content-between bg-danger px-1" style="border-radius: 10px;width:300px; color:<?= color('danger light'); ?>;font-size:<?= tema('font_size'); ?>;">
+
+            <div class="toast-body p-2" style="border-radius: 10px; font-size:<?= tema('font_size'); ?>;">
+                dfgdffgv
+            </div>
+            <div>
+                <button type="button" class="btn btn-sm m-auto btnclose" style="color: <?= color('danger light'); ?>;"><i class="fa fa-times-circle"></i></button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- gagal php -->
+<?php if (session()->getFlashdata('gagal')) : ?>
+
+    <div class="gagal blur" style="border-radius: 10px;">
+        <div class="middlecenter">
+            <div class="d-flex justify-content-between bg-danger px-1" style="border-radius: 10px;width:300px; color:<?= color('danger light'); ?>;font-size:<?= tema('font_size'); ?>;">
+
+                <div class="toast-body p-2" style="border-radius: 10px; font-size:<?= tema('font_size'); ?>;">
+                    <?= session()->getFlashdata('gagal'); ?>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-sm m-auto btnclose" style="color: <?= color('danger light'); ?>;"><i class="fa fa-times-circle"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
